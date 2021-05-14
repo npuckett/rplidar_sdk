@@ -28,6 +28,8 @@
 #include <stdlib.h>
 
 #include "rplidar.h" //RPLIDAR standard sdk, all-in-one header
+#include "osc/OscOutboundPacketStream.h"
+#include "ip/UdpSocket.h"
 
 #ifndef _countof
 #define _countof(_Array) (int)(sizeof(_Array) / sizeof(_Array[0]))
@@ -89,8 +91,8 @@ int main(int argc, const char * argv[]) {
 
     bool useArgcBaudrate = false;
 
-    printf("Ultra simple LIDAR data grabber for RPLIDAR.\n"
-           "Version: "RPLIDAR_SDK_VERSION"\n");
+    //printf("Ultra simple LIDAR data grabber for RPLIDAR.\n"
+      //     "Version: "RPLIDAR_SDK_VERSION"\n");
 
     // read serial port from the command line...
     if (argc>1) opt_com_path = argv[1]; // or set to a fixed value: e.g. "com3" 
